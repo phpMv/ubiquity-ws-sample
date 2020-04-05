@@ -1,0 +1,12 @@
+{% extends "main/vBase.html" %}
+{%block body%}
+<div class="ui icon error message">
+  <i class="car icon"></i>
+  <div class="content">
+    <div class="header">
+      Error 404
+    </div>
+    <p>Not found: <b>{{route}}</b></p>
+  </div>
+</div>
+{%endblock%}

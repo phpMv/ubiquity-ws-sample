@@ -1,0 +1,14 @@
+{% extends "main/vBase.html" %}
+{%block body%}
+<div class="ui icon success message">
+  <i class="mail icon"></i>
+  <div class="content">
+    <div class="header">
+      Message sent from <b>{{msg.firstname ~ " " ~ msg.lastname}} ({{msg.email}})</b>
+    </div>
+    {{msg.content | raw }}
+    <hr>
+    <a href="{{path('Home')}}" class="ui positive button">Back to Home</a>
+  </div>
+</div>
+{%endblock%}

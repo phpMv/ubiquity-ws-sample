@@ -1,0 +1,30 @@
+{% extends "main/vBase.html" %}
+{%block body%}
+	<h2 class="ui header">
+	  <i class="mail icon"></i>
+	  <div class="content">
+	    Contact
+	    <div class="sub header">Contact us</div>
+	  </div>
+	</h2>	
+	<form class="ui form segment" method="post" action="/sendMessage">
+		<div class="equal width fields">
+			<div class="field">
+				<label>Firstname</label> <input type="text" name="firstname" required>
+			</div>
+			<div class="field">
+				<label>Lastname</label> <input type="text" name="lastname" required>
+			</div>
+		</div>
+		<div class="field">
+			<label>Your message</label>
+			<textarea placeholder="Please write us your message..." rows="3" name="content" required></textarea>
+		</div>
+		<div class="field">
+			<label>Email</label>
+			<input type="email" name="email" required>
+		</div>
+		<button class="ui primary submit icon button"><i class="ui mail icon"></i> Submit</button>
+		<input type="reset" class="ui clear button" value="Clear">
+	</form>
+{%endblock%}

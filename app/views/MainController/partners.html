@@ -1,0 +1,26 @@
+{% extends "main/vBase.html" %}
+{%block body%}
+	<h2 class="ui header">
+	  <i class="handshake icon"></i>
+	  <div class="content">
+	    Partners
+	    <div class="sub header">R&T department partners</div>
+	  </div>
+	</h2>	
+	<div class="ui divided items">
+	{% for partner in partners %}
+		<div class="item">
+		    <div class="ui tiny image">
+		      <img src="{{partner.image}}">
+		    </div>
+		    <div class="middle aligned content">
+		      	<a href="/partner/{{partner.name}}">{{partner.name}}</a>
+		      	<div class="extra">
+       				<div class="ui label">{{partner.tag}}</div>
+       			</div>
+		    </div>
+		</div>
+	{% endfor %}
+	</div>
+	
+{%endblock%}

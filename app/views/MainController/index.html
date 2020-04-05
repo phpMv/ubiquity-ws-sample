@@ -1,0 +1,17 @@
+{% extends "main/vBase.html" %}
+{%block body%}
+	{% for message in messages %}
+		<div class="ui icon {{message.type}} message">
+		  <i class="{{message.icon}} icon"></i>
+		  <div class="content">
+		    <div class="header">
+		      {{message.title}}
+		    </div>
+		    <p>{{message.content}}</p>
+		  </div>
+		</div>
+	{% endfor %}
+	<div class="ui segment">
+		{{content | raw}}
+	</div>
+{%endblock%}

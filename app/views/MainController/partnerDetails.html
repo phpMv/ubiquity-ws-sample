@@ -1,0 +1,20 @@
+{% extends "main/vBase.html" %}
+{%block body%}
+<div class="ui grey inverted segment">
+	<div class="ui horizontal inverted card">
+	  <div class="image">
+	    <img src="{{partner.image}}">
+	  </div>
+	  <div class="content">
+	    <div class="header">{{partner.name}}</div>
+	    <div class="meta">
+	      <span class="ui label">{{partner.tag}}</span>
+	    </div>
+	    <div class="description">
+	      {{partner.details | nl2br }}
+	    </div>
+	  </div>
+	</div>
+	<a href="{{path('Partners')}}" class="ui inverted fluid button">Back to Partners</a>
+</div>
+{%endblock%}

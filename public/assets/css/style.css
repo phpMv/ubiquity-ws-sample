@@ -1,0 +1,30 @@
+body {
+  background-color: #FFFFFF;
+}
+.ui.menu .item img.logo {
+  margin-right: 1.5em;
+}
+.main.container {
+  margin-top: 8em;
+  min-height: 484px;
+}
+.wireframe {
+  margin-top: 2em;
+}
+.ui.footer.segment {
+  margin: 5em 0em 0em;
+  padding: 5em 0em;
+}
+.head{
+	background-color: #1f1f1f;
+}
+
+.menu.links{
+	background-color: #f8f9fa!important;
+	padding: 10px 0;
+}
+
+.version{
+	background-color: #D39D38!important;
+	color: white!important;
+}
