@@ -1,0 +1,35 @@
+{
+	"name" : "phpmv/ubiquity-webtools",
+	"description" : "Webtools for Ubiquity framework",
+	"type" : "extension",
+	"keywords" : [
+		"php",
+		"framework",
+		"mvc",
+		"orm",
+		"tools",
+		"php-framework"
+	],
+	"require" : {
+		"php" : ">7.0",
+		"phpmv/php-mv-ui": "^2.2.19",
+		"phpmv/ubiquity-dev": "^0.0"
+	},
+	"license" : "Apache-2.0",
+	"authors" : [{
+			"name" : "Jean-Christophe HERON",
+			"email" : "myaddressmail@gmail.com",
+			"role" : "Lead developer"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Ubiquity\\" : "src/Ubiquity/"
+		}
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "2.4.x-dev"
+		}
+	}
+}

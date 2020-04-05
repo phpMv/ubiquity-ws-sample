@@ -1,0 +1,32 @@
+{	"name" : "phpmv/ubiquity-demos-datas",
+	"description" : "Datas for Ubiquity-demos projects",
+	"type" : "datas",
+	"keywords" : [
+		"php",
+		"framework",
+		"mvc",
+		"orm",
+		"server",
+		"ubiquity"
+	],
+	"require" : {
+		"php" : "^7.4"
+	},
+	"license" : "Apache-2.0",
+	"authors" : [{
+			"name" : "Jean-Christophe HERON",
+			"email" : "myaddressmail@gmail.com",
+			"role" : "Lead developer"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"" : "src/"
+		}
+	},
+	"extra" : {
+		"branch-alias" : {
+			"dev-master" : "1.0.x-dev"
+		}
+	}
+}

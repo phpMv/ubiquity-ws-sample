@@ -1,0 +1,74 @@
+build:
+  nodes:
+    analysis:
+      dependencies:
+        before:
+          - composer require twig/twig mindplay/annotations phpfastcache/phpfastcache monolog/monolog czproject/git-php phpmv/php-mv-ui
+          - composer require codeception/codeception:^2.2 --dev
+          - composer require phpmv/ubiquity-devtools:dev-master --dev
+      environment:
+        php:
+          version: 7.4
+      tests:
+        override:
+          - php-scrutinizer-run
+
+    coverage:
+      dependencies:
+        before:
+#          - sudo apt-get install -y php7.4-dev
+
+      environment:
+        php:
+          version: 7.4
+        hosts:
+          dev.local: '127.0.0.1'
+        apache2:
+          modules: ['rewrite']
+          sites:
+            ubiquity:
+              host: 'dev.local'
+              web_root: 'src/'
+        selenium: true
+      services:
+          # For available tags, see https://hub.docker.com/_/mysql/
+          mysql: 5.7
+      tests:
+        before:
+          - sudo cp src/tests/files/xdebug.ini /home/scrutinizer/.phpenv/versions/7.4.0/etc/conf.d/xdebug.ini
+          - mysql -u root mysql < src/tests/unit/db/messagerie.sql
+          - mysql -u root mysql < src/tests/unit/db/projects.sql
+          - (yes | ./vendor/bin/Ubiquity new src -b=messagerie -m -a -h=semantic,foundation,bootstrap)
+          - cp -f src/tests/files/composer.json src/composer.json
+          - (cd src/ && composer update)
+          - cp -f src/tests/files/_index.php src/index.php && cp -f src/tests/files/.htaccess src/.htaccess && cp -f src/tests/files/services.php src/app/config/ && cp -f src/tests/files/config.php src/app/config/
+          - cp -R src/tests/files/unit/* src/app/
+          - sudo chmod 0777 -R src/*
+          - cp -f src/tests/files/run-react.sh run-react.sh
+          - sudo chmod +x run-react.sh
+          - sudo /usr/share/locales/install-language-pack fr_FR
+          - sudo service apache2 restart && sudo service apache2 reload
+          - sudo curl -v http://dev.local/index.php?c=Admin
+          - cp -f src/tests/files/_react.php src/.ubiquity/_react.php && cp -f src/tests/files/react-config.php src/.ubiquity/react-config.php
+          - command: ./run-react.sh
+            background: true
+          - sudo curl -v http://127.0.0.1:8801
+
+        override:
+          - command: (cd src/ && ./vendor/bin/codecept build && ./vendor/bin/codecept run --coverage-xml -v)
+            coverage:
+              file: src/tests/_output/coverage.xml
+              format: clover
+filter:
+    paths: ["src/Ubiquity/*"]
+    excluded_paths:
+        - src/Ubiquity/controllers/Autoloader.php
+        - src/Ubiquity/controllers/admin/
+        - src/Ubiquity/annotations/
+        - src/Ubiquity/utils/git/UGitRepository.php
+        - src/Ubiquity/cache/Preloader.php
+        - src/Ubiquity/cache/preloading/
+checks:
+    php:
+        code_rating: true
+        duplication: true

@@ -1,0 +1,44 @@
+{
+	"name": "phpmv/php-mv-ui",
+	"description": "A JQuery and UI library for php and php MVC frameworks",
+	"type": "library",
+	"keywords": [
+		"php",
+		"jquery",
+		"phalcon",
+		"symfony",
+		"laravel",
+		"Yii",
+		"ubiquity",
+		"codeIgniter",
+		"twitter bootstrap",
+		"jquery ui",
+		"semantic ui",
+		"framework"
+	],
+	"require": {
+		"php": ">7.0",
+		"frameworks/jquery": "~2.1"
+	},
+	"suggest": {
+		"components/jqueryui": "~1.11",
+		"twitter/bootstrap": "~3.3",
+		"fomantic/ui": "~2.7.8"
+	},
+	"autoload": {
+		"psr-4": { "Ajax\\": "Ajax/" }
+	},
+	"license": "Apache-2.0",
+	"authors": [
+		{
+			"name": "Jean-Christophe HERON",
+			"email": "myaddressmail@gmail.com",
+			"role": "Lead developer"
+		}
+	],
+	"extra": {
+        "branch-alias": {
+            "dev-master": "2.4.x-dev"
+        }
+    }
+}
