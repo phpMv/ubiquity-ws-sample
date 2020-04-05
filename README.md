@@ -1,4 +1,4 @@
-# cms
+# Ubiquity mini website sample
 
 This README outlines the details of collaborating on this Ubiquity application.
 A short introduction of this app could easily go here.
