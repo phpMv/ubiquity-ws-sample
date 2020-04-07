@@ -18,13 +18,14 @@
 		</div>
 		<div class="field">
 			<label>Your message</label>
-			<textarea placeholder="Please write us your message..." rows="3" name="content" required></textarea>
+			<textarea placeholder="Please write us your message..." rows="5" name="content" required></textarea>
 		</div>
 		<div class="field">
 			<label>Email</label>
 			<input type="email" name="email" required>
 		</div>
-		<button class="ui primary submit icon button"><i class="ui mail icon"></i> Submit</button>
-		<input type="reset" class="ui clear button" value="Clear">
+		<hr>
+		<button class="ui positive icon button bt200"><i class="ui mail icon"></i> Submit message</button>
+		<a href="{{path('Home')}}" class="ui icon button bt200"><i class="ui close icon"></i> Cancel & back to Home</a>
 	</form>
 {%endblock%}

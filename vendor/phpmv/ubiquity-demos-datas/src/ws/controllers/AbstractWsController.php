@@ -17,6 +17,7 @@ abstract class AbstractWsController extends Controller {
 
 	protected $items = [
 		'Home',
+		'News',
 		'Partners',
 		'Contact'
 	];

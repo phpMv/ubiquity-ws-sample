@@ -4,7 +4,8 @@ return array(
 	"info"=>array(),
 	"display-cache-types"=>array(
 			"controllers",
-			"models"
+			"models",
+			"annotations"
 			),
 	"maintenance"=>array(
 			"on"=>false,

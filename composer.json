@@ -5,7 +5,7 @@
         "phpmv\/ubiquity": "^2.3",
         "phpmv\/ubiquity-mailer": "^0.0",
         "phpmv\/php-mv-ui": "^2.3",
-        "phpmv/ubiquity-demos-datas": "dev-master"
+        "phpmv/ubiquity-demos-datas": "^1.1"
     },
     "require-dev": {
         "monolog\/monolog": "^2.0",

@@ -28,3 +28,14 @@ body {
 	background-color: #D39D38!important;
 	color: white!important;
 }
+
+.cookies {
+  	position: fixed!important;
+    bottom: 0!important;
+    right: 0!important;
+    width: 600px!important; 
+}
+
+.bt200{
+	min-width: 200px!important;
+}

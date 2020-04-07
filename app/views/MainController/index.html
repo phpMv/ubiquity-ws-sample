@@ -2,12 +2,13 @@
 {%block body%}
 	{% for message in messages %}
 		<div class="ui icon {{message.type}} message">
+		 <a href="{{path('noMore',[message.title])}}"><i class="close icon"></i></a>
 		  <i class="{{message.icon}} icon"></i>
 		  <div class="content">
 		    <div class="header">
 		      {{message.title}}
 		    </div>
-		    <p>{{message.content}}</p>
+		    <p>{{message.content | raw}}</p>
 		  </div>
 		</div>
 	{% endfor %}
